@@ -1,3 +1,5 @@
 theme: jekyll-theme-midnight
 title: Koshakji
 description: Nothing to see here...yet!
+plugins:
+  - jekyll-feed
