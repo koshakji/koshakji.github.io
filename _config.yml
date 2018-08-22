@@ -9,5 +9,6 @@ defaults:
   -
     scope:
       path: ""
+      type: "posts"
     values:
       author: "Majd Koshakji"
