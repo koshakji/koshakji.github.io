@@ -1,5 +1,7 @@
 theme: jekyll-theme-minimal
 title: Koshakji
+twitter_username: koshakji
+github_username: koshakji
 description: Nothing to see here...yet!
 show_downloads: false
 plugins:
