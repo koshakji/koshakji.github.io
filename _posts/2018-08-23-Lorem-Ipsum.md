@@ -1,5 +1,7 @@
 ---
-tags: [one, two, three]
+layout: post
+title:  "Lorem Ipsum"
+date:   2015-11-17 16:16:01 -0600
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu odio ut sem nulla. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Nulla malesuada pellentesque elit eget gravida cum. Suscipit tellus mauris a diam. Lorem ipsum dolor sit amet consectetur adipiscing. Facilisis gravida neque convallis a cras semper. Cras fermentum odio eu feugiat pretium nibh. Hac habitasse platea dictumst quisque. Nunc consequat interdum varius sit amet mattis vulputate enim. Ligula ullamcorper malesuada proin libero nunc consequat interdum. Viverra adipiscing at in tellus integer. Ultricies lacus sed turpis tincidunt. Bibendum est ultricies integer quis auctor elit sed vulputate mi. Dui nunc mattis enim ut tellus elementum sagittis. Sit amet est placerat in egestas erat. At erat pellentesque adipiscing commodo. Fermentum posuere urna nec tincidunt.
 
