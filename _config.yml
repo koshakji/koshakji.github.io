@@ -1,8 +1,9 @@
 theme: jekyll-theme-minimal
 title: Koshakji
 twitter_url: https://twitter.com/koshakji
+instagram_url: https://instagram.com/koshakji
 github_username: koshakji
-description: Nothing to see here...yet!
+description: 🤓
 show_downloads: false
 plugins:
   - jekyll-feed
