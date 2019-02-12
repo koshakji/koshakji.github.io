@@ -23,7 +23,7 @@ navigation:                  # (optional) site navigation in the header
   - about.md
 
 icons:                       # (optional) icons in the header, see http://fontawesome.com/icons
-  github: "https://github.com"
+  github: "https://github.com/koshakji"
   rss: "/feed.xml"
 
 comments:                    # embed disqus or isso comments
