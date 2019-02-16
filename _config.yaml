@@ -4,7 +4,7 @@ description: ""
 
 # Jekyll settings
 permalink: /:title/          # see https://jekyllrb.com/docs/permalinks/
-paginate: 2                  # number of articles per page, remove to disable pagination
+# paginate: 2                  # number of articles per page, remove to disable pagination
 excerpt_separator: "\n\n\n"  # indicates the end of the excerpt by two blank lines
 
 # Page settings
@@ -19,7 +19,7 @@ dark_theme: false            # enables dark mode
 
 navigation:                  # (optional) site navigation in the header
   - index.html
-  - archive.md
+#  - archive.md
   - about.md
 
 icons:                       # (optional) icons in the header, see http://fontawesome.com/icons
