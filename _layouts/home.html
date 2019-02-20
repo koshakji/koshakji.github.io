@@ -11,7 +11,7 @@ layout: default
   </header>
   {{ page.excerpt }}
   {% unless page.excerpt == page.content %}
-  <footer><a class="ghost" href="{{ page.url | relative_url }}">read more »</a></footer>
+  <footer><a class="gray" href="{{ page.url | relative_url }}">read more »</a></footer>
   {% endunless %}
 </article>
 {% endfor %}
