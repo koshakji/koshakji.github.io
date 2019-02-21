@@ -11,7 +11,7 @@ layout: default
     {% else %}
     <h3><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
     {% endif %}
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time> <a href="{{ page.url | relative|_url}}">∞</a>
+    <p> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time> <a href="{{ page.url | relative|_url}}">∞</a></p>
   </header>
   {{ page.excerpt }}
   {% unless page.excerpt == page.content %}
