@@ -13,6 +13,8 @@ hide_title: false            # remove site heading in the header
 post_footer: true            # show previous and next links at the end of each post
 date_format: "%B %d, %Y"     # see http://shopify.github.io/liquid/filters/date/
 
+highlighter: rouge
+
 # Theme settings
 style: contrast               # choose between "default", "contrast" and "minimal"
 dark_theme: false            # enables dark mode
