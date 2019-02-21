@@ -6,7 +6,11 @@ layout: default
 <article>
   <header>
     {%- assign date_format = site.date_format | default: "%B %d, %Y" -%}
-    <h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+    {% if page.external_url %}
+    <h1><a href="{{ page.external_url }}">{{ page.title }}</a></h1>
+    {% else %}
+    <h3><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+    {% endif %}
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time>
   </header>
   {{ page.excerpt }}
@@ -30,9 +34,9 @@ layout: default
   <div>
     <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
     {% if post.external_url %}
-      <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
+    <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
     {% else %}
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
     {% endif %}
   </div>
   {% endfor %}
