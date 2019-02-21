@@ -1,5 +1,5 @@
 ---
-title: 🔗 Linked Post to Google
+title: Linked Post to Google
 category: Linked
 layout: post
 date: 2019-02-21 17:27:35
