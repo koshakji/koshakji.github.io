@@ -5,11 +5,17 @@
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta name="author" content="{{ page.author | default: site.author | escape}}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% if page.external_url %}
+  <link rel="canonical" href="{{ page.external_url }}">
+{% else %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% if site.plugins contains "jekyll-feed" %}
+    <link rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title }}" />
+  {% endif %}
+{% endif %}
 <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "/assets/css/classes.css" | relative_url }}">
 <link rel="stylesheet" href="{{ site.style | default: "default" | prepend: "/assets/css/" | append: ".css" | relative_url }}">
-{% if site.plugins contains "jekyll-feed" %}<link rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title }}" />{% endif %}
 {% if page.mathjax or site.mathjax %}
 <link rel="stylesheet" href="{{ "/assets/katex/katex.min.css" | relative_url }}">
 <script defer src="{{ "/assets/katex/katex.min.js" | relative_url }}"></script>
