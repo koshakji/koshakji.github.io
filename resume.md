@@ -23,7 +23,7 @@ Information Technology Engineering; Damascus University – 2016–Present
 
 #### Projects
 - Tasks app for iOS
-- Sliding tile puzzle game for iOS.
+- [Tily](https://github.com/koshakji/Tily), a Sliding tile puzzle game for iOS.
 - Solid color wallpaper creator app for iOS.
 - Crossword puzzle game for Java platforms.
 - Nine, 9 tic-tac-toe grids combined game, for iOS.
