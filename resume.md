@@ -7,7 +7,7 @@ permalink: "/resume"
 Information Technology Engineering; Damascus University – 2016–Present
 
 #### Programming Knowledge
-- iOS Programming using Swift and UIKit
+- iOS Programming using Swift, UIKit and SwiftUI
 - Java
 - Python
 - JavaScript
