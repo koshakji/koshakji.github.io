@@ -4,7 +4,7 @@ layout: post
 date: 2019-10-20
 ---
 
-Today, I'm launching my first app to the app store.
+Today, I'm launching my first app to the App Store.
 It's a little game called Sliding Tily, or just Tily for short.
 
 This game is a sliding tile puzzle game with a small number of levels, and a few search algorithms that can solve each level with varying levels of efficiency, including:
