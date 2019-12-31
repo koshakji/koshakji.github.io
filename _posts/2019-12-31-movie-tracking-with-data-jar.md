@@ -9,7 +9,11 @@ I like to keep track of movies I'd like to watch and movies I've watched. I know
 
 In this post, I'll explain my movie tracking setup which is built on Shortcuts, [Toolbox Pro](https://apps.apple.com/us/app/toolbox-pro-for-shortcuts/id1476205977) and Data Jar (which is still in beta), with the help of [Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188).
 
-The setup consists of 3 main Shortcuts:
+Toolbox Pro is a very nice app that just provides powerful actions for Shortcuts. It has a large amount of actions, some of them you need an in-app purchase for, but the ones we'll be needing today are all free.
+
+Data Jar is an incredible Shortcuts data store. It's like a permanent dictionary that lives outside of Shortcuts, but can be very easily accessed and manipulated using Shortcuts.
+
+The setup consists of 3 main Shortcuts, linked here, and explained below:
 - [Add movie to my watchlist](https://www.icloud.com/shortcuts/c78ea6f943b6426b90ccc561409fc189)
 - [Show movie details](https://www.icloud.com/shortcuts/9c51a06bd4ee4c01b01bbee5be1a5e41)
 - [Mark a movie as watched](https://www.icloud.com/shortcuts/b301135e87584e7c826a1261a002c34b)
@@ -25,14 +29,15 @@ Here's how it all works:
 
 We only input the movie name, which the Shortcut uses as a query to search using Toolbox Pro's `Find Movies` action, which searches [TMDb](https://www.themoviedb.org/). Usually this results in multiple movies, which are displayed for us to pick from, alongside their poster and release year, all in a nice list built from Toolbox Pro's `Menu Items`. The index of each movie is stored in `Field 1` of the Menu Item, for recall in the next steps.
 Once we select a movie, we get the item from the `Movies` list which corresponds the index stored in `Field 1` of the Menu Item.
-There's a small hack here: if we attempt the `Get Item from List` right after getting the index, the resulting object looks like a number instead of the `Movie` object returned by Toolbox Pro, which contains the details we're gonna need in the next steps, and there's no way to tell Shortcuts to use this value as a `Movie` object. To fix this, we need to have a list of movies right before getting the item from list.
+
+There's a small hack here: if we attempt the `Get Item from List` right after getting the index, the resulting object looks like a number instead of the `Movie` object returned by Toolbox Pro, which contains the details we're gonna need in the next steps, and there's no way to tell Shortcuts to use this value as a `Movie` object. To fix this, we need to have a list of movies right before getting the item from list, which makes Shortcuts believe that the items of this list are movies.
 
 We build out a dictionary containing all the details we want to save, and save it as the value of `Movie.{ID}`. We're using the movie's ID as the key and the dictionary containing the details we want to save as its value. 
 I like storing movies based on their ID so saving multiple movies with the same name doesn't accidentally overwrite anything, and I prefer it over arrays because they are easier to find this way, when we need to update or show their details.
 
 We also use `Get Contents of URL` to download the poster thumbnail and full resolution image and store them with the movie details in Data Jar.
 
-Here is how it looks running it:
+Here is how it looks running it, and the result saved in Data Jar:
 ![add to watchlist](/assets/img/2019-12-31-movie-tracking/add.jpeg)
 ### Show Movie Details
 This Shortcut relies heavily on this Scriptable script, so I'll explain it first:
@@ -61,13 +66,17 @@ Script.setShortcutOutput({ "movies": output })
 Script.complete()
 ```
 The script accepts a dictionary from Shortcuts containing two pieces of information:
-1. The list of movies
-2. The type of filter
+- The list of movies
+- The type of filter
 
 The list of movies is understood by Scriptable as a dictionary, so we have to use `Object.keys` to get an array of the keys of the dictionary, and map them to their respective values, using `map` with a simple function that returns the value of its input key from the `movies` dictionary.
-The result of these two operations is an actual array of movie details, which we filter using the `isAccepted` function, based on the type of filter. I only built three different filters: all, watchlist, and watched. Other filters can be built by adding them as cases in the switch on line 3 and filtering based on whatever criteria you like. We then sort this array. I chose to sort based on movie ratings, which can also be changed based on your preferences, by changing the sort function.
+
+The result of these two operations is an actual array of movie details, which we filter using the `isAccepted` function, based on the type of filter. I only built three different filters: all, watchlist, and watched. Other filters can be built by adding them as cases in the switch in the `isAccepted` function and filtering based on whatever criteria you like.
+
+We then sort this array. I chose to sort based on movie ratings, which can also be changed based on your preferences, by changing the sort function.
+
 The resulting array is returned to Shortcuts as a part of a dictionary, containing only the array's value. This is to overcome a limitaion in which we can't return an array directly from Scriptable to Shortcuts, instead we have to wrap it up in a dictionary.
-Lastly, we call `Scriptable.complete()` on line 21 to end the script. This is not necessary, but it does speed up the proccess.
+Lastly, we call `Scriptable.complete()` to end the script. This is not necessary, but it does speed up the proccess, significantly.
 
 Now, back to Shortcuts:
 The Shortcut starts by asking which filter we'd like to use, then we get the full `Movie` dictionary from Data Jar, which contains all of our movies.
@@ -76,13 +85,13 @@ We iterate over that list, getting the thumbnail of the poster of each movie fro
 
 Once a movie is picked, we extract the ID from `Field 1` of the Menu Item, and we get the details of the selected movie from Data Jar.
 
-Here, I'm differentiating between watched movies and movies I haven't watched yet. This is to display less information if I hadn't watched the movie yet, to avoid any kind of spoiler, and to add a `Watched` button which calls the next Shortcut with the selected movie's ID. We build a summary of the movie's information, which could also be customized by changing the text.
+Here, I'm differentiating between watched and unwatched movies. This is to display less information if I hadn't watched the movie yet, to avoid any kind of spoiler, and to add a `Watched` button which calls the next Shortcut with the selected movie's ID. We build a summary of the movie's information, which could also be customized by changing the text near the end of the Shortcut.
 
 Finally, we get the movie's poster from Data Jar, build a list containig the poster and the summary we created, and pass it to Toolbox's `Preview` action, which builds a nice looking preview of our movie's details and poster.
 ![movie details](/assets/img/2019-12-31-movie-tracking/details.jpeg)
 
 ### Mark a Movie as Watched
-If this Shortcut receives a movie ID, it immediately sets its `Watched` value to true, and set its `Watch time` value to the current date.
+If this Shortcut receives a movie ID, it immediately sets its `Watched` value to true, and set its `Watch time` value to the current date in Data Jar.
 
 Otherwise it works exactly like the previous one: We get the movies list, pass it to Scriptable with "Watchlist" filter type and build out our menu items. Once a movie is picked, we get its ID from the menu item, just like before, and then we set its `Watched` and `Watch time` values.
 
