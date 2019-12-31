@@ -33,7 +33,7 @@ I like storing movies based on their ID so saving multiple movies with the same 
 We also use `Get Contents of URL` to download the poster thumbnail and full resolution image and store them with the movie details in Data Jar.
 
 Here is how it looks running it:
-![add to watchlist](/assets/img/2019-12-25-movie-tracking/add.jpeg)
+![add to watchlist](/assets/img/2019-12-31-movie-tracking/add.jpeg)
 ### Show Movie Details
 This Shortcut relies heavily on this Scriptable script, so I'll explain it first:
 
@@ -79,14 +79,14 @@ Once a movie is picked, we extract the ID from `Field 1` of the Menu Item, and w
 Here, I'm differentiating between watched movies and movies I haven't watched yet. This is to display less information if I hadn't watched the movie yet, to avoid any kind of spoiler, and to add a `Watched` button which calls the next Shortcut with the selected movie's ID. We build a summary of the movie's information, which could also be customized by changing the text.
 
 Finally, we get the movie's poster from Data Jar, build a list containig the poster and the summary we created, and pass it to Toolbox's `Preview` action, which builds a nice looking preview of our movie's details and poster.
-![movie details](/assets/img/2019-12-25-movie-tracking/details.jpeg)
+![movie details](/assets/img/2019-12-31-movie-tracking/details.jpeg)
 
 ### Mark a Movie as Watched
 If this Shortcut receives a movie ID, it immediately sets its `Watched` value to true, and set its `Watch time` value to the current date.
 
 Otherwise it works exactly like the previous one: We get the movies list, pass it to Scriptable with "Watchlist" filter type and build out our menu items. Once a movie is picked, we get its ID from the menu item, just like before, and then we set its `Watched` and `Watch time` values.
 
-![movie watched](/assets/img/2019-12-25-movie-tracking/watched.jpeg)
+![movie watched](/assets/img/2019-12-31-movie-tracking/watched.jpeg)
 ## Some Slight Shortcommings
 I'd like to get more details from Toolbox Pro's `Find Movies` action, like movie runtime and genre, which is supposed to be there, but I'm always getting what appears to be an empty string in its place.
 
