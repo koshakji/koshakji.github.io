@@ -97,9 +97,11 @@ Otherwise it works exactly like the previous one: We get the movies list, pass i
 
 ![movie watched](/assets/img/2019-12-31-movie-tracking/watched.jpeg)
 ## Some Slight Shortcommings
-I'd like to get more details from Toolbox Pro's `Find Movies` action, like movie runtime and genre, which is supposed to be there, but I'm always getting what appears to be an empty string in its place.
+<s>I'd like to get more details from Toolbox Pro's `Find Movies` action, like movie runtime and genre, which is supposed to be there, but I'm always getting what appears to be an empty string in its place. 
 
-I might try to use TMDb's API directly without going through Toolbox Pro for getting the movie details, which might give me some more info, but I haven't looked into that yet.
+I might try to use TMDb's API directly without going through Toolbox Pro for getting the movie details, which might give me some more info, but I haven't looked into that yet.</s>
+
+Update: I found out about Toolbox Pro's `Get Details of movie with ID` action, which, given a movie's ID, returns a bunch of nice details, including runtime, genres and cast. For some reason I hadn't noticed this action earlier.
 
 I'd love it if all these Shortcuts would run faster, specifically, Toolbox Pro's Menu Items take a relatively long time to build.
 
