@@ -6,7 +6,7 @@ permalink: "/resume"
 ### Contact
 - Al-Zablatani, Damascus, Syria
 - Mobile: +963 967 845 467
-- Mail: koshakji@icloud.com
+- Mail: [koshakji@icloud.com](mailto:koshakji@icloud.com)
 
 --------
 ### Education
