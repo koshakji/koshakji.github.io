@@ -35,6 +35,7 @@ permalink: "/resume"
 	- Text editor app for iOS.
 	- Built using UIKit, with some SwiftUI screens.
 	- Supports the latest iOS features like Document Providers, multiple windows on iPadOS, and dark mode.
+	- Uses NaturalLanguage to give advanced writing stats.
 - Visual Assistant:
 	- Visually impaired assistant app for iOS.
 	- Built using UIKit, Vision and CoreML.
