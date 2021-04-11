@@ -3,15 +3,9 @@ title: Resume
 permalink: "/resume"
 ---
 
-### Contact
-- Al-Zablatani, Damascus, Syria
-- Mobile: +963 967 845 467
-- Mail: [koshakji@icloud.com](mailto:koshakji@icloud.com)
-
---------
 ### Education
-- Information Technology Engineering, Specializing in Artificial Intelligence; Damascus University, 2016–2020.
-- Master's of Big Data; Higher Institute of Applied Sciences and Technology, 2020–current.
+- Bachelor of Information Technology Engineering, Department of Artificial Intelligence and Natural Language Processing; Damascus University, 2016–2020.
+- Master of Artificial Intelligence and Natural Language Processing; Damascus University, 2020–current.
 
 --------
 ### Languages
@@ -22,7 +16,7 @@ permalink: "/resume"
 ### Skills and Experiences
 - Frameworks: 
 	- Swift: UIKit, SwiftUI, Core Data, Vision, CoreML, NaturalLanguage.
-	- Python: Scikit-learn, TensorFlow, Numpy, Flask.
+	- Python: Scikit-learn, TensorFlow, Numpy, Flask, fastai.
 - Development Tools: Xcode, Git, Jupyter Notebooks.
 
 --------
@@ -35,7 +29,6 @@ permalink: "/resume"
 	- Text editor app for iOS.
 	- Built using UIKit, with some SwiftUI screens.
 	- Supports the latest iOS features like Document Providers, multiple windows on iPadOS, and dark mode.
-	- Uses NaturalLanguage to give advanced writing stats.
 - Visual Assistant:
 	- Visually impaired assistant app for iOS.
 	- Built using UIKit, Vision and CoreML.
@@ -45,4 +38,4 @@ permalink: "/resume"
 	- Food assistant app for iOS.
 	- Built using UIKit, with Python Flask backend.
 	- Food image classification, recommendation and tracking.
-	- Core Data used for meal tracking.
+	- Core Data used for meal tracking. 
