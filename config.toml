@@ -2,16 +2,31 @@ baseURL = "https://koshakji.github.io"
 languageCode = "en-us"
 title = "Majd Koshakji"
 theme =  ["github.com/Mitrichius/hugo-theme-anubis"]
+paginate = 3
+
+
+# [[menu.main]]
+# identifier = "archive"
+# name = "Archive"
+# url = "/posts"
+# weight = 1
+
+# [[menu.main]]
+# identifier = "about"
+# name = "About"
+# url = "/about/"
+# weight = 2
 
 [params]
 author = "Majd Koshakji"
 dateFormat = "2006-01-02"
 style = "auto-without-switcher"
-readMore = false
-readNextPosts = 1
-disableSummary = true
+readMore = true
+readNextPosts = 2
+disableSummary = false
 copyCodeButton = true
 rssAsSocialIcon = true
+locale = "en-us"
 
 [[params.social]]
 id = "github"
