@@ -3,35 +3,47 @@ languageCode = "en-us"
 title = "Majd Koshakji"
 theme =  ["github.com/Mitrichius/hugo-theme-anubis"]
 paginate = 3
+disableKinds = ["taxonomy", "taxonomyTerm", "sitemap"]
+
+[outputs]
+  posts = ["HTML", "RSS"]
+  about = ["HTML"]
+  resume = ["HTML"]
+
+# disable the taxonomy generations
+[taxonomies]
+  tag = ""
+  group = ""
+  category = ""
 
 
-# [[menu.main]]
-# identifier = "archive"
-# name = "Archive"
-# url = "/posts"
-# weight = 1
+[[menu.main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "/posts/"
+  weight = 1
 
-# [[menu.main]]
-# identifier = "about"
-# name = "About"
-# url = "/about/"
-# weight = 2
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 2
 
 [params]
-author = "Majd Koshakji"
-dateFormat = "2006-01-02"
-style = "auto-without-switcher"
-readMore = true
-readNextPosts = 2
-disableSummary = false
-copyCodeButton = true
-rssAsSocialIcon = true
-locale = "en-us"
+  author = "Majd Koshakji"
+  dateFormat = "2006-01-02"
+  style = "auto-without-switcher"
+  readMore = true
+  readNextPosts = 2
+  disableSummary = false
+  copyCodeButton = true
+  rssAsSocialIcon = true
+  locale = "en-us"
 
 [[params.social]]
-id = "github"
-name = "koshakji"
+  id = "github"
+  name = "koshakji"
 
-#[[params.social]]
-#id = "twitter"
-#name = "koshakji"
+# [[params.social]]
+  # id = "twitter"
+  # name = "koshakji"
