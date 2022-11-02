@@ -1,0 +1,4 @@
+baseURL = "https://koshakji.github.io"
+languageCode = "en-us"
+title = "Majd Koshakji"
+theme =  ["github.com/Mitrichius/hugo-theme-anubis"]
