@@ -44,6 +44,6 @@ disableKinds = ["taxonomy", "taxonomyTerm", "sitemap"]
   id = "github"
   name = "koshakji"
 
-# [[params.social]]
-  # id = "twitter"
-  # name = "koshakji"
+[[params.social]]
+  id = "mastodon"
+  url = "https://mastodon.online/@koshakji"
