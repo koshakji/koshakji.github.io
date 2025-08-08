@@ -1,6 +1,8 @@
 ---
-title: Gaza Donation List
+title: Gaza Fundraiser List
 layout: “post”
+aliases:
+- donations
 disable_feed: true
 ---
 
