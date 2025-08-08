@@ -41,7 +41,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "sitemap"]
   locale = "en-us"
 
 [[params.social]]
-  id = "github"
-  name = "koshakji"
+  id = "mastodon"
+  url = "https://solarpunk.moe/@friend"
 
 
