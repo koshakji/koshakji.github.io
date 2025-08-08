@@ -1,5 +1,5 @@
 ---
-title: “Random Things”
+title: Random Things
 layout: “post”
 disable_feed: true
 ---
