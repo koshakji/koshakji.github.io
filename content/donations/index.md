@@ -1,5 +1,5 @@
 ---
-title: “Gaza Donation List”
+title: Gaza Donation List
 layout: “post”
 disable_feed: true
 ---
